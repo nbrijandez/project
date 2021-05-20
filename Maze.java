@@ -75,7 +75,6 @@ public class Maze extends Application
       {
          for (int j = 0; j < 21; j++)
          {
-            //System.out.print(Maze[i][j]);
             if (Maze[i][j] == 1)
             {
                gc.setFill(Color.BLACK);
@@ -87,12 +86,10 @@ public class Maze extends Application
                xPos = i*25;
                gc.fillRect(xPos,yPos,25, 25);
             }
-            else //if(Maze[i][j] == 1)
-            {
+            else             {
                gc.setFill(Color.WHITE);
                gc.fillRect(i*25,j*25,25, 25);
             }
-            //gc.fillRect(j*25,i*25,25, 25);
         }
       }
       gc.setFill(Color.MAGENTA);
@@ -107,30 +104,23 @@ public class Maze extends Application
          //gets what key was pressed
          KeyCode keyPressed = event.getCode();
          gc.clearRect(xPos, yPos, 25,25);
-         //sets stop to true when "a" is pressed
-         //if(move == true)
-         //{
+
          if (event.getCode() == KeyCode.UP)
          {
-            //stop = true;
             if(Maze[xPos/25][yPos/25 -1] == 0)
             {
                yPos = yPos - 25;
-               //System.out.println("up");
             }
             else
             {
                gc.fillRect(xPos,yPos,25, 25);
             }
          }
-         //sets stop to false when "s" is pressed
          if(event.getCode() == KeyCode.DOWN)
          {
-            //stop = false;
             if(Maze[xPos/25][(yPos/25)+1] == 0)
             {
             yPos = yPos + 25;
-            //System.out.println("down");
             }
             else
             {
@@ -141,11 +131,9 @@ public class Maze extends Application
          }
          if(event.getCode() == KeyCode.LEFT)
          {
-            //stop = false;
             if(Maze[xPos/25-1][yPos/25] == 0)
             {
             xPos -= 25;
-            //System.out.println("left");
             }
             else
             {
@@ -156,21 +144,15 @@ public class Maze extends Application
          }
          if(event.getCode() == KeyCode.RIGHT)
          {
-            //stop = false;
             if(Maze[xPos/25+1][yPos/25] == 0)
             {
             xPos = xPos + 25;
-            //System.out.println("right");
             }
             else
             {
                gc.fillRect(xPos,yPos,25, 25);
             }
-
-
          }
-         //}
-          //gc.setFill(Color.PAPAYAWHIP);
 
         gc.fillRect(xPos,yPos,25, 25);
         
@@ -184,6 +166,3 @@ public class Maze extends Application
       }
      }
    }
-
-
-//}
